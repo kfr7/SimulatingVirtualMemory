@@ -1,4 +1,4 @@
-# virtual_memory.py
+# virtual_memory_no_dp.py
 
 def decode_virtual_address(virtual_address: int) -> tuple((int, int, int, int)):
     """
@@ -18,7 +18,7 @@ def decode_virtual_address(virtual_address: int) -> tuple((int, int, int, int)):
 
 if __name__ == "__main__":
     PM = [0] * 524288
-    D = [[0] * 512] * 1024
+    # D = [[0] * 512] * 1024    # don't need disk for this version
 
     with open("first.txt", "r") as first_file:
         # flag of which line we are on
@@ -85,13 +85,26 @@ if __name__ == "__main__":
                 else:
                     # now get the frame of page table
                     frame_of_pt = PM[2*s+1]
-                    # check HERE positive or negative (not for this version without demand paging)
-                    # ...
+                    if frame_of_pt < 0:
+                        # MAYBE DELETE THIS IF STATEMENT
+                        # checks if that page was initialized with some block 
+                        # (this version is without blocks though so say it's an error)
+                        print(-1, end=" ")
+                        continue
 
                     # now get the frame of the page
                     frame_of_p = PM[frame_of_pt*512+p]
-                    # check HERE positive or negative (not for this version without demand paging)
-                    # ...
+                    if frame_of_p == 0:
+                        # MAYBE DELETE THIS IF STATEMENT
+                        # checks if that page was initialized with some frame or not
+                        print(-1, end=" ")
+                        continue
+                    elif frame_of_p < 0:
+                        # MAYBE DELETE THIS IF STATEMENT
+                        # checks if that page was initialized with some block 
+                        # (this version is without blocks though so say it's an error)
+                        print(-1, end=" ")
+                        continue
 
                     # now we can print the address
                     print(frame_of_p*512+w, end=" ")
