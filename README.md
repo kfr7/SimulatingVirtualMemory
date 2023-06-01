@@ -18,4 +18,10 @@ LIST OF FILES IN ZIP:
 2) "virtual_memory_with_dp.py": main python file that has ALL the code
     needed to compute physical memory addresses given
     virtual memory addresses and does implement demand paging.
-2) "README.md": describes how to run and list of files in zip.
+3) "README.md": describes how to run and list of files in zip.
+4) "output-dp.txt" is the output file using demand paging
+5) "output-no-dp.txt" is the output file without demand paging
+
+Remember: 
+Name the folder that you are going to compress into a zip file: project2_Kian_Ranjbar
+and the zip file should be named the same thing but with project2_Kian_Ranjbar.zip (zip extension)
