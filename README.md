@@ -4,8 +4,8 @@ Simulate interaction between physical memory and virtual memory.
 HOW TO RUN:
 (Program uses Python so it will be needed to be downloaded on the machine)
 1) Place both of the command files (initialization and input) in the same directory as "virtual_memory_*.py"
-2) Name the first text file: "first.txt"
-3) Name the second text file (one with VM addresses): "second.txt"
+2) Name the init text file: "first.txt"
+3) Name the input text file (one with VM addresses): "second.txt"
 4) In terminal, change directories into the directory which contains both files, and 
     enter "python3 virtual_memory_no_dp.py" or "python3 virtual_memory_with_dp.py" (preferred - demand paging)
     Depending on your machine, you might be able to just put "python" instead of "python3"
