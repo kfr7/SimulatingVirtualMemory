@@ -97,6 +97,7 @@ if __name__ == "__main__":
                 first_line = False
 
     # fill free frames without including ones used above in input
+    # and skip frames 0 and 1 since those store the segment table
     for i in range(2, 1024):
         if i not in frames_allocated:
             FF.put(i)
