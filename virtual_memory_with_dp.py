@@ -143,12 +143,7 @@ if __name__ == "__main__":
                     # now get the frame of the page
                     frame_of_p = PM[frame_of_pt*512+p]
                     # check if it is a frame or block (positive or negative)
-                    if frame_of_p == 0:
-                        # MAYBE DELETE THIS IF STATEMENT
-                        # checks if that page was initialized with some frame or not
-                        print(-1, end=" ")
-                        continue
-                    elif frame_of_p < 0:
+                    if frame_of_p < 0:
                         # if negative, then we need to retrieve that block and put it into 
                         # the first free frame
                         smallest_free_frame = FF.get()  # get and remove smallest free frame

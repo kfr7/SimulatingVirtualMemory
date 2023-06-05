@@ -94,12 +94,7 @@ if __name__ == "__main__":
 
                     # now get the frame of the page
                     frame_of_p = PM[frame_of_pt*512+p]
-                    if frame_of_p == 0:
-                        # MAYBE DELETE THIS IF STATEMENT
-                        # checks if that page was initialized with some frame or not
-                        print(-1, end=" ")
-                        continue
-                    elif frame_of_p < 0:
+                    if frame_of_p < 0:
                         # MAYBE DELETE THIS IF STATEMENT
                         # checks if that page was initialized with some block 
                         # (this version is without blocks though so say it's an error)
